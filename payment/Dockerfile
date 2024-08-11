@@ -9,7 +9,7 @@ WORKDIR /opt/server
 COPY requirements.txt /opt/server/
 RUN apt-get update && apt-get install -y python3.11
 RUN pip install -r requirements.txt
-COPY .py/* /opt/server/
+COPY *.py /opt/server/
 COPY payment.ini /opt/server/
 USER roboshop
 CMD ["pyuswgi", "--ini", "payment.ini"]
