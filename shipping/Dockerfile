@@ -2,7 +2,7 @@ FROM maven AS build
 EXPOSE 8080
 ENV CART_ENDPOINT=cart
 ENV DB_HOST=mysql
-RUN addgroup -S roboshop && adduser -S roboshop -G roboshop \
+RUN useradd roboshop \
     && mkdir /opt/shipping \
     && chown roboshop:roboshop -R /opt/shipping
 WORKDIR /opt/shipping
