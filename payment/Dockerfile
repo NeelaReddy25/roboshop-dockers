@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 COPY *.py /opt/server/
 COPY payment.ini /opt/server/
 USER roboshop
-CMD ["pyuswgi", "--ini", "payment.ini"]
+CMD ["uswgi", "--ini", "payment.ini"]
