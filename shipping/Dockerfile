@@ -9,7 +9,7 @@ WORKDIR /opt/shipping
 COPY pom.xml /opt/shipping/
 # RUN mvn dependency: resolve
 COPY src /opt/shipping/src
-RUN package
+# RUN package
 RUN npm install
 USER roboshop
 CMD [ "java", "-Xmn256m", "-Xmx768m", "-jar", "shipping.jar" ]
