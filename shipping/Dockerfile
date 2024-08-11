@@ -7,7 +7,7 @@ RUN useradd roboshop \
     && chown roboshop:roboshop -R /opt/shipping
 WORKDIR /opt/shipping
 COPY pom.xml /opt/shipping/
-RUN mvn dependency: resolve
+RUN mvn -X dependency: resolve
 COPY src /opt/shipping/src
 RUN package
 USER roboshop
