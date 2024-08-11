@@ -7,9 +7,8 @@ RUN useradd roboshop \
     && chown roboshop:roboshop -R /opt/shipping
 WORKDIR /opt/shipping
 COPY pom.xml /opt/shipping/
-# RUN mvn dependency: resolve
+RUN mvn dependency: resolve
 COPY src /opt/shipping/src
-# RUN package
-RUN npm install
+RUN package
 USER roboshop
 CMD [ "java", "-Xmn256m", "-Xmx768m", "-jar", "shipping.jar" ]
