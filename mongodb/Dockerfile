@@ -1,3 +1,3 @@
 FROM mongo:5
-# EXPOSE 27017
-# CMD ["mongod"]
+EXPOSE 27017
+CMD ["mongod"]
