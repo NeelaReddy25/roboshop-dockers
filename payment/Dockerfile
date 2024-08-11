@@ -7,7 +7,7 @@ RUN useradd roboshop \
     && chown roboshop:roboshop -R /opt/server
 WORKDIR /opt/server
 COPY requirements.txt /opt/server/
-RUN apk --update add python3.11
+RUN apt-get update && apt-get install -y python3.11
 RUN pip install -r requirements.txt
 COPY .py/* /opt/server/
 COPY payment.ini /opt/server/
