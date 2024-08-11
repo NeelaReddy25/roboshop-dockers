@@ -1,3 +1,3 @@
-FROM mongo:8
+FROM mongo:5
 # EXPOSE 27017
 # CMD ["mongod"]
