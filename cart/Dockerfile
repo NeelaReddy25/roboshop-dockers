@@ -10,4 +10,4 @@ COPY package.json .
 COPY *.js /opt/server/
 RUN npm install
 USER roboshop
-CMD ["node","index.js"]
+CMD ["node","server.js"]
