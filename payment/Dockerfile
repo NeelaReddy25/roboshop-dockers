@@ -1,4 +1,4 @@
-FROM python:python:3.11-alpine3.20
+FROM python:3.11-alpine3.20
 EXPOSE 8080
 USER root
 ENV AMQP_USER=roboshop
