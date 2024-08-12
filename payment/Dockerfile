@@ -1,8 +1,8 @@
-FROM python:3.11
+FROM python:3.11.9-alpine3.20
 EXPOSE 8080
 ENV AMQP_USER=roboshop
 ENV AMQP_PASS=roboshop123
-RUN useradd roboshop \
+RUN addgroup -S roboshop && adduser -S roboshop -G roboshop \
     && mkdir /opt/server \
     && chown roboshop:roboshop -R /opt/server
 WORKDIR /opt/server
