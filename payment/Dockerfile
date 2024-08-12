@@ -1,4 +1,4 @@
-FROM python:3.11.9-alpine3.20
+FROM python:3.9.18-alpine3.19
 EXPOSE 8080
 ENV AMQP_USER=roboshop
 ENV AMQP_PASS=roboshop123
@@ -12,4 +12,4 @@ RUN pip install -r requirements.txt
 COPY *.py /opt/server/
 COPY payment.ini /opt/server/
 USER roboshop
-CMD ["pyuswgi", "--ini", "payment.ini"]
+CMD ["uswgi", "--ini", "payment.ini"]
