@@ -7,7 +7,7 @@ RUN addgroup -S roboshop && adduser -S roboshop -G roboshop \
     && chown roboshop:roboshop -R /opt/server
 WORKDIR /opt/server
 COPY requirements.txt /opt/server/
-RUN apt-get update && apt-get install -y python3.11
+RUN apk update && apk add --no-cache python3.11 py3-pip
 RUN pip install -r requirements.txt
 COPY *.py /opt/server/
 COPY payment.ini /opt/server/
