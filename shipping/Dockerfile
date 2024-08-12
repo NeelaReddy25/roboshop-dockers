@@ -8,7 +8,7 @@ RUN useradd roboshop \
 WORKDIR /opt/shipping
 # RUN mvn clean install
 COPY pom.xml /opt/shipping/
-RUN mvn dependency: resolve
+RUN mvn dependency: resolve -X
 COPY src /opt/shipping/src
 RUN mvn package
 # COPY --from=build /opt/shipping/target/shipping-1.0.jar shipping.jar
