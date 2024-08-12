@@ -8,6 +8,4 @@ WORKDIR /opt/server
 COPY package.json .
 COPY server.js /opt/server/
 RUN npm install
-RUN echo Hello World
-RUN adduser cart
 CMD ["node","server.js"]
