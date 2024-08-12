@@ -6,7 +6,6 @@ RUN addgroup -S roboshop && adduser -S roboshop -G roboshop \
 WORKDIR /opt/server
 ENV MONGO=true
 COPY package.json /opt/server/
-COPY *.js /opt/server/
+COPY server.js /opt/server/
 RUN npm install
-USER roboshop
 CMD ["node","server.js"]
