@@ -1,4 +1,4 @@
-FROM maven:19-jdk-alpine3.16
+FROM maven:alpine3.16
 EXPOSE 8080
 ENV CART_ENDPOINT=cart:8080
 ENV DB_HOST=mysql
