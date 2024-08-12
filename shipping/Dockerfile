@@ -1,4 +1,4 @@
-FROM maven
+FROM maven:3.8.5-openjdk-11-slim AS build
 EXPOSE 8080
 ENV CART_ENDPOINT=cart:8080
 ENV DB_HOST=mysql
@@ -6,6 +6,7 @@ RUN useradd roboshop \
     && mkdir /opt/shipping \
     && chown roboshop:roboshop -R /opt/shipping
 WORKDIR /opt/shipping
+RUN mvn clean install
 COPY pom.xml /opt/shipping/
 RUN mvn dependency: resolve
 COPY src /opt/shipping/src
