@@ -6,7 +6,7 @@ RUN useradd roboshop \
     && mkdir /opt/shipping \
     && chown roboshop:roboshop -R /opt/shipping
 WORKDIR /opt/shipping
-RUN mvn clean install
+# RUN mvn clean install
 COPY pom.xml /opt/shipping/
 RUN mvn dependency: resolve
 COPY src /opt/shipping/src
